@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "Android(Clean Architecture"
 include(":app")
 include(":shared")
+include(":shared:core:network")
