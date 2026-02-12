@@ -26,3 +26,4 @@ rootProject.name = "Android(Clean Architecture"
 include(":app")
 include(":shared")
 include(":shared:core:network")
+include(":shared:core:data")
