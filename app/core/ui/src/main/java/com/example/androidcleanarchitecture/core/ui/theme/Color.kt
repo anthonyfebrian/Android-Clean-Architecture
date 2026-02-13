@@ -1,4 +1,4 @@
-package com.example.androidcleanarchitecture.ui.theme
+package com.example.androidcleanarchitecture.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
