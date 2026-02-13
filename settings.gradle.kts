@@ -27,9 +27,14 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "Android-Clean-Architecture"
 include(":app")
 include(":app:feature:moduleA")
+include(":app:feature:moduleB")
+include(":app:feature:moduleC")
+
 include(":shared")
 include(":shared:core:network")
 include(":shared:core:data")
 include(":shared:core:utils")
 include(":shared:feature:moduleA")
+include(":shared:feature:moduleB")
+include(":shared:feature:moduleC")
 
