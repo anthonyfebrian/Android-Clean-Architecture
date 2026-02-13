@@ -26,6 +26,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "Android-Clean-Architecture"
 include(":app")
+include(":app:core:route")
 include(":app:core:ui")
 include(":app:feature:moduleA")
 include(":app:feature:moduleB")
