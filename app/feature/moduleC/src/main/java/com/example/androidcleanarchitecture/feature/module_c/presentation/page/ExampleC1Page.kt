@@ -1,4 +1,4 @@
-package com.example.androidcleanarchitecture.feature.module_a.presentation.page
+package com.example.androidcleanarchitecture.feature.module_c.presentation.page
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
@@ -6,15 +6,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun ExampleA1Page(
-    navToDetail: () -> Unit
+fun ExampleC1Page(    navToDetail: () -> Unit
 ) {
     Column {
         Text(
-            text = "ExampleA1Page"
+            text = "ExampleC1Page"
         )
         Button(onClick = navToDetail) {
-            Text("Go to Module A")
+            Text("Go to Module C")
         }
     }
 }

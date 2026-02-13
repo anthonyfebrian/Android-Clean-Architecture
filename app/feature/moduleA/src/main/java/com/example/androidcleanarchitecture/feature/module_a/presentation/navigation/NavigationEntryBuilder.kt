@@ -7,10 +7,6 @@ import com.example.androidcleanarchitecture.feature.module_a.presentation.page.E
 import com.example.androidcleanarchitecture.feature.module_a.presentation.page.ExampleAiDetailPage
 
 fun EntryProviderScope<NavKey>.moduleAEntryBuilder() {
-    entry<ModuleARoute.ExampleA1Page> {
-        ExampleA1Page()
-    }
-
     entry<ModuleARoute.ExampleA1DetailPage> { args ->
         ExampleAiDetailPage(args.text)
     }

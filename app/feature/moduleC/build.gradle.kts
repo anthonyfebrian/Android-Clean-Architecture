@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.app.core.route)
+
     //Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)

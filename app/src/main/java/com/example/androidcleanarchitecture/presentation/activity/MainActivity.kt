@@ -17,6 +17,8 @@ import androidx.navigation3.ui.NavDisplay
 import com.example.androidcleanarchitecture.core.route.Route
 import com.example.androidcleanarchitecture.core.ui.theme.AppTheme
 import com.example.androidcleanarchitecture.feature.module_a.presentation.navigation.moduleAEntryBuilder
+import com.example.androidcleanarchitecture.feature.module_b.presentation.navigation.moduleBEntryBuilder
+import com.example.androidcleanarchitecture.feature.module_c.presentation.navigation.moduleCEntryBuilder
 import com.example.androidcleanarchitecture.presentation.page.MainPage
 
 class MainActivity : ComponentActivity() {
@@ -45,25 +47,13 @@ fun AndroidCleanArchitectureApp() {
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider {
             entry<Route.Main> {
-                MainPage()
+                MainPage(
+                    onNavigate = { dest -> backStack.add(dest) }
+                )
             }
             moduleAEntryBuilder()
+            moduleBEntryBuilder()
+            moduleCEntryBuilder()
         },
     )
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppTheme {
-        Greeting("Android")
-    }
 }
