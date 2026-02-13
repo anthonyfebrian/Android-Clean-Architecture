@@ -22,7 +22,9 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Android(Clean Architecture"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+rootProject.name = "Android-Clean-Architecture"
 include(":app")
 include(":app:feature:moduleA")
 include(":shared")
