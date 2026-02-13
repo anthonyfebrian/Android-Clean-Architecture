@@ -12,18 +12,30 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+/**
+ * Defines the Dark Color Scheme for the application.
+ * Uses [Purple80], [PurpleGrey80], and [Pink80] as primary, secondary, and tertiary colors.
+ */
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
 )
 
+/**
+ * Defines the Light Color Scheme for the application.
+ * Uses [Purple40], [PurpleGrey40], and [Pink40] as primary, secondary, and tertiary colors.
+ */
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
     tertiary = Pink40
 )
 
+/**
+ * Defines the Typography system for the application.
+ * Maps the [Typography] styles to the custom definitions in [TypoGraphy.kt].
+ */
 private val AppTypography = Typography(
     displayLarge = displayLarge,
     displayMedium = displayMedium,
@@ -42,6 +54,10 @@ private val AppTypography = Typography(
     labelSmall = labelSmall,
 )
 
+/**
+ * Defines the Shape system for the application.
+ * Maps the [Shapes] styles to the custom definitions in [Shape.kt].
+ */
 private val AppShapes = Shapes(
     extraSmall = extraSmall,
     small = small,
@@ -50,6 +66,16 @@ private val AppShapes = Shapes(
     extraLarge = extraLarge,
 )
 
+)
+
+/**
+ * Main Theme Composable for the application.
+ * Applies the [MaterialTheme] with the configured colors, typography, and shapes.
+ *
+ * @param darkTheme Whether the theme should be dark or light. Defaults to the system setting.
+ * @param dynamicColor Whether to use dynamic colors (available on Android 12+). Defaults to true.
+ * @param content The content to be displayed within the theme.
+ */
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
