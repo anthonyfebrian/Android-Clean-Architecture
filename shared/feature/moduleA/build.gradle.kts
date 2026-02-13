@@ -12,9 +12,9 @@ kotlin {
     androidLibrary {
         namespace = "com.example.androidcleanarchitecture.shared.module_a"
         compileSdk {
-            version = release(36) { minorApiLevel = 1 }
+            version = release(libs.versions.compileSdk.get().toInt()) { minorApiLevel = libs.versions.minorApiLevel.get().toInt() }
         }
-        minSdk = 24
+        minSdk = libs.versions.minSdk.get().toInt()
 
         withHostTestBuilder {
         }

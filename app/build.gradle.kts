@@ -6,15 +6,15 @@ plugins {
 android {
     namespace = "com.example.androidcleanarchitecture"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
+        version = release(libs.versions.compileSdk.get().toInt()) {
+            minorApiLevel = libs.versions.minorApiLevel.get().toInt()
         }
     }
 
     defaultConfig {
         applicationId = "com.example.androidcleanarchitecture"
-        minSdk = 24
-        targetSdk = 36
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.compileSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
