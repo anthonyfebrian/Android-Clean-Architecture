@@ -24,7 +24,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android(Clean Architecture"
 include(":app")
+include(":app:feature:moduleA")
 include(":shared")
 include(":shared:core:network")
 include(":shared:core:data")
 include(":shared:core:utils")
+include(":shared:feature:moduleA")
+
