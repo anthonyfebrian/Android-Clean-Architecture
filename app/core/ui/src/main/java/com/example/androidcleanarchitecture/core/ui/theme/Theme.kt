@@ -66,8 +66,6 @@ private val AppShapes = Shapes(
     extraLarge = extraLarge,
 )
 
-)
-
 /**
  * Main Theme Composable for the application.
  * Applies the [MaterialTheme] with the configured colors, typography, and shapes.

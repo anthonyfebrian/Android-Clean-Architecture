@@ -1,9 +1,5 @@
-package com.example.androidcleanarchitecture
+package com.example.androidcleanarchitecture.presentation.page
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -21,26 +17,20 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewScreenSizes
-import com.example.androidcleanarchitecture.core.ui.theme.AppTheme
+import com.example.androidcleanarchitecture.presentation.activity.Greeting
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            AppTheme {
-                AndroidCleanArchitectureApp()
-            }
-        }
-    }
+enum class AppDestinations(
+    val label: String,
+    val icon: ImageVector,
+) {
+    MODULE_A("Module A", Icons.Filled.Home),
+    MODULE_B("Module B", Icons.Filled.Favorite),
+    MODULE_C("Module C", Icons.Filled.AccountBox),
 }
 
-@PreviewScreenSizes
 @Composable
-fun AndroidCleanArchitectureApp() {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
+fun MainPage() {
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.MODULE_A) }
 
     NavigationSuiteScaffold(
         navigationSuiteItems = {
@@ -60,35 +50,11 @@ fun AndroidCleanArchitectureApp() {
         }
     ) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
             Greeting(
-                name = "Android",
+                name = "Android $currentDestination" ,
                 modifier = Modifier.padding(innerPadding)
             )
         }
-    }
-}
-
-enum class AppDestinations(
-    val label: String,
-    val icon: ImageVector,
-) {
-    HOME("Home", Icons.Filled.Home),
-    FAVORITES("Favorites", Icons.Filled.Favorite),
-    PROFILE("Profile", Icons.Filled.AccountBox),
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppTheme {
-        Greeting("Android")
     }
 }

@@ -1,0 +1,69 @@
+package com.example.androidcleanarchitecture.presentation.activity
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
+import androidx.navigation3.ui.NavDisplay
+import com.example.androidcleanarchitecture.core.route.Route
+import com.example.androidcleanarchitecture.core.ui.theme.AppTheme
+import com.example.androidcleanarchitecture.feature.module_a.presentation.navigation.moduleAEntryBuilder
+import com.example.androidcleanarchitecture.presentation.page.MainPage
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            AppTheme {
+                AndroidCleanArchitectureApp()
+            }
+        }
+    }
+}
+
+@PreviewScreenSizes
+@Composable
+fun AndroidCleanArchitectureApp() {
+    val backStack = rememberNavBackStack(Route.Main)
+
+    NavDisplay(
+        entryDecorators = listOf(
+            rememberSaveableStateHolderNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator()
+        ),
+        backStack = backStack,
+        onBack = { backStack.removeLastOrNull() },
+        entryProvider = entryProvider {
+            entry<Route.Main> {
+                MainPage()
+            }
+            moduleAEntryBuilder()
+        },
+    )
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    AppTheme {
+        Greeting("Android")
+    }
+}
