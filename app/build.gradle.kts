@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.koin.compiler.plugin)
 }
 
 android {
@@ -50,6 +51,10 @@ dependencies {
     //AndroidX lifecycle viewmodel
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //Koin
+    implementation(libs.koin.android)
+    implementation(libs.koin.annotations)
 
     //Navigation3
     implementation(libs.androidx.navigation3.ui)
