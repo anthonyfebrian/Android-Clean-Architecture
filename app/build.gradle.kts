@@ -30,6 +30,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://api.prod.example.com/\"")
+        }
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.dev.example.com/\"")
         }
     }
     compileOptions {
@@ -38,6 +42,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -55,6 +60,9 @@ dependencies {
     //Koin
     implementation(libs.koin.android)
     implementation(libs.koin.annotations)
+
+    //Napier
+    implementation(libs.napier)
 
     //Navigation3
     implementation(libs.androidx.navigation3.ui)

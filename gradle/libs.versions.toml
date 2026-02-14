@@ -21,6 +21,7 @@ kotlinTest = "2.3.10"
 ktor = "3.4.0"
 lifecycleRuntimeKtx = "2.10.0"
 material = "1.13.0"
+napier = "2.7.1"
 navigation3 = "1.0.1"
 runner = "1.7.0"
 
@@ -75,6 +76,10 @@ ktor-client-js = { group = "io.ktor", name = "ktor-client-js", version.ref = "kt
 ktor-client-websockets = { group = "io.ktor", name = "ktor-client-websockets", version.ref = "ktor" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# Napier
+napier = { group = "io.github.aakira", name = "napier", version.ref = "napier" }
+
 
 #Navigation3
 androidx-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "navigation3" }

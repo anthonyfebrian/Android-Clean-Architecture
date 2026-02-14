@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.android.lint)
+    alias(libs.plugins.koin.compiler.plugin)
 }
 
 kotlin {
@@ -69,6 +70,9 @@ kotlin {
                 implementation(libs.ktor.client.content.negotiation)
 
                 implementation(libs.koin.core)
+                implementation(libs.koin.annotations)
+
+                implementation(libs.napier)
             }
         }
 
@@ -83,6 +87,8 @@ kotlin {
                 // Add Android-specific dependencies here. Note that this source set depends on
                 // commonMain by default and will correctly pull the Android artifacts of any KMP
                 // dependencies declared in commonMain.
+                implementation(libs.ktor.client.android)
+                implementation(libs.ktor.client.okhttp)
             }
         }
 
@@ -101,6 +107,7 @@ kotlin {
                 // part of KMP’s default source set hierarchy. Note that this source set depends
                 // on common by default and will correctly pull the iOS artifacts of any
                 // KMP dependencies declared in commonMain.
+                implementation(libs.ktor.client.ios)
             }
         }
     }

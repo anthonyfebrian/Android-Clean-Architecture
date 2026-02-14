@@ -61,6 +61,8 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
+                implementation(projects.shared.core.network)
+                // Add KMP dependencies here
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
             }

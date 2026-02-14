@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(projects.app.core.route)
+    implementation(projects.shared.feature.moduleA)
     //Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
